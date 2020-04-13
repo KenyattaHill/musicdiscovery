@@ -2,77 +2,122 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicDiscover</title>
-    <!-- link to our own css -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- link to css framework library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Discovery</title>
+  <!-- link to our own css -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- link to css framework library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css" />
 </head>
 
 <body>
-    <!--title on screen  -->
-    <h1 class="title has-text-white">Music Finder</h1>
-    <!--pulled code from bulma for nav tabs -->
-    <div class="container ">
-        <div class="tabs is-toggle is-centered is-large">
 
-            <ul class="has-background-light">
-                <!-- code for active tab commented out -->
-                <li class="is-active">
-                    <a href="index.html">Music Finder</a>
-                </li>
-                <li>
-                    <a href="lyrics.html">Lyric Finder</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <!--container for entry forms  -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
-        <!-- form for user input from bulma -->
-        <h2 class="subtitle">Select a Genre</h2>
-        <!-- add drop down from bulma -->
-        <div class="select">
-            <select>
-                <option>Rock</option>
-                <option>Rap/Hip Hop</option>
-                <option>Electronic</option>
-                <option>Soul/R&B</option>
-                <option>Jazz</option>
-                <option>Latin</option>
-            </select>
+      <div class="navbar-brand">
+        <p class="navbar-item">
+          Music Discovery
+        </p>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item is-active" href="index.html">
+            Music
+          </a>
+          <a class="navbar-item" href="lyrics.html">
+            Lyrics
+          </a>
         </div>
-        <!-- add dropdown for song number returned -->
-        <h3 class="subtitle">Select How Many Songs You Wish to See</h3>
-        <!-- dropdown from bulma -->
-        <div class="select">
-            <select>
-                <option>1</option>
-                <option>5</option>
-                <option>10</option>
-            </select>
-        </div>
-        <div>
-            <button>Search</button>
-        </div>
+      </div>
     </div>
-    <ul>
-        <!-- code for active tab commented out -->
-        <!-- <li class="is-active"> -->
-        <a>Music Finder</a>
-        </li>
-        <li>
-            <a>Lyric Finder</a>
-        </li>
-    </ul>
-    </div>
-    <!-- link to javascript file -->
-    <script src="index.js"></script>
+  </nav>
 
+  <div class="section">
+    <div class="container">
+      <h1 class="title has-text-danger">Music Finder</h1>
+      <form>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <div class="label has-text-white">
+              <label>Search:</label>
+            </div>
+          </div>
+          <div class="field-body">
+            <div class="control">
+              <input id="query" type="text" class="input" />
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <div class="label has-text-white">
+              <label>Type:</label>
+            </div>
+          </div>
+          <div class="field-body">
+            <div class="control">
+              <div class="select">
+                <select id="type">
+                  <option value="album">Album</option>
+                  <option value="artist">Artist</option>
+                  <option value="playlist">Playlist</option>
+                  <option value="track">Track</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <!-- Left empty for spacing -->
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <button type="button" id="btnSearch" class="button is-primary">
+                  Search
+                </button>
+                <button type="button" id="btnClear" class="button is-secondary">
+                  Clear
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div id="musicContainer"></div>
+    </div>
+  </div>
+
+  <div id="errorModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title ">Error!</p>
+      </header>
+      <section class="modal-card-body has-text-danger">
+        Search input is required!
+      </section>
+      <footer class="modal-card-foot">
+        <button id="modalOkBtn" class="button is-success">Ok</button>
+      </footer>
+    </div>
+  </div>
+  <script src="index.js"></script>
 </body>
 
 </html>

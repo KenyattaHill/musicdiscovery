@@ -2,3 +2,29 @@ html {
   background: url('./Assets/images/james-owen-MuIvHRJbjA8-unsplash.jpg') no-repeat center fixed;
   background-size: cover;
 }
+
+#musicContainer,.songsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+/* .card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.card-media{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-media-left{
+  margin-right: 1rem;
+} */
+
+#musicContainer > div, .songsContainer > div{
+  margin: 5px;
+  flex: 1 1 auto;
+}
+
