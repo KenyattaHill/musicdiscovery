@@ -24,6 +24,8 @@ const clearButton = element('#btnClear');
 
 searchButton.addEventListener('click', searchMusic);
 clearButton.addEventListener('click', event => {
+  musicContainer.classList.remove('box')
+  musicContainer.classList.remove('has-background-grey')
   queryInput.value = '';
   musicContainer.innerHTML = null;
   queryInput.focus();
@@ -80,6 +82,8 @@ function searchMusic() {
 }
 
 function renderData(data) {
+  musicContainer.classList.remove('box')
+  musicContainer.classList.remove('has-background-grey')
   // object containing different functions for the different types
   const type = typeInput.value;
   const actions = {
@@ -91,6 +95,9 @@ function renderData(data) {
   const html = actions[type + 's'](data);
 
   musicContainer.innerHTML = html;
+  
+  musicContainer.classList.add('box')
+  musicContainer.classList.add('has-background-grey')
 }
 
 function renderAlbums(data) {
