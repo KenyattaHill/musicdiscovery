@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicDiscover</title>
+    <title>Music Discover</title>
     <!-- link to our own css -->
     <link rel="stylesheet" href="styles.css">
     <!-- link to css framework library -->
@@ -12,84 +12,91 @@
 </head>
 
 <body>
- <!--title on screen  -->
- <h1 class="title">Music Finder</h1>
-    <!--pulled code from bulma for nav tabs -->
-    <div class="container">    
-        <div class="tabs is-toggle is-centered is-large">
-
-                <ul>
-                <!-- code for active tab commented out -->
-                    <!-- <li class="is-active"> -->
-                    <a href="index.html">Music Finder</a>
-                </li>
-                <li>
-                    <a href="lyrics.html">Lyric Finder</a>
-                </li>
-                </ul>
-        </div>    
-    </div>   
-       
-    
-<!--container for entry forms  -->
-<div class="container">
-<!-- form for user input from bulma -->
-    <div class="row"></div>
-        <h2 class="subtitle">Select a Genre</h2>
-<!-- add drop down from bulma -->
-    <div class="select">
-        <select>
-            <option>Rock</option>
-            <option>Rap/Hip Hop</option>
-            <option>Electronic</option>
-            <option>Soul/R&B</option>
-            <option>Jazz</option>
-            <option>Latin</option>
-        </select>
-    </div>
-<!-- add dropdown for song number returned -->
-    <div class="row"></div>
-        <h3 class="subtitle">Select How Many Songs You Wish to See</h3>
-<!-- dropdown from bulma -->
-    <div class="select">
-        <select>
-            <option>1</option>
-            <option>5</option>
-            <option>10</option>
-        </select>
-    </div>
-</div>
-
-
-  
-
-
-   
-
-<!-- link to javascript file -->
-<script src="index.js"></script>
-
-=======
-            <ul>
-                <!-- code for active tab commented out -->
-                <!-- <li class="is-active"> -->
-                <a>Music Finder</a>
-                </li>
-                <li>
-                    <a>Lyric Finder</a>
-                </li>
-            </ul>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <p class="navbar-item">
+                Music Discovery
+                </a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item is-active" href="index.html">
+                    Music
+                </a>
+                <a class="navbar-item" href="lyrics.html">
+                    Lyrics
+                </a>
+            </div>
         </div>
     </nav>
-    <!-- form for user input from bulma -->
-   <div class="field">
-        <div class="control">
-            <input class="input is-small" type="text" placeholder="enter name">
-        </div>
-    </div> 
-    <!-- link to javascript file -->
-    <script src="index.js"></script>
+    <div class="container">
+        <h1 class="title has-text-danger">Search for your favorite music!</h1>
+        <form>
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <div class="label has-text-white">
+                        <label>Search:</label>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="control">
+                        <input type="text" id="query" class="input">
+                    </div>
+                </div>
+            </div>
 
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <div class="label has-text-white">
+                        <label>Type:</label>
+                    </div>
+                </div>
+                <div class="field-body">
+                    <div class="control">
+                        <div class="select">
+                            <select id="droptype">
+                                <option value="album">Album</option>
+                                <option value="artist">Artist</option>
+                                <option value="playlist">Playlist</option>
+                                <option value="track">Track</option>
+                                <option value="show">Show</option>
+                                <option value="episode">Episod</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <div class="label">
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <!-- Left empty for spacing -->
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <button type="button" id="btnSearch" class="button is-primary">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </form>
+        <div id="musicContainer"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>
