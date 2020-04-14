@@ -1,9 +1,9 @@
 html {
-  background: url(./Assets/images/james-owen-MuIvHRJbjA8-unsplash.jpg) no-repeat center fixed;
+  background: url('./Assets/images/frank-septillion-Qrspubmx6kE-unsplash.jpg') no-repeat center fixed;
   background-size: cover;
 }
 
-#musicContainer,.songsContainer{
+#musicContainer,#songsContainer{
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
@@ -23,7 +23,7 @@ html {
   margin-right: 1rem;
 } */
 
-#musicContainer > div, .songsContainer > div{
+#musicContainer > div, #songsContainer > div{
   margin: 5px;
   flex: 1 1 auto;
 }

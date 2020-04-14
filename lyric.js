@@ -24,6 +24,8 @@ modalOkButton.addEventListener('click', toggleModal);
 // button clicks
 searchButton.addEventListener('click', search);
 clearButton.addEventListener('click', event => {
+  songsContainer.classList.remove('box')
+  songsContainer.classList.remove('has-background-grey')
   queryInput.value = '';
   songsContainer.innerHTML = null;
   queryInput.focus();
@@ -83,6 +85,8 @@ function search() {
 }
 
 function renderData(data) {
+  songsContainer.classList.remove('box')
+  songsContainer.classList.remove('has-background-grey')
   const html = data.response.hits
     .map(hit => hit.result)
     .map(result => ({
@@ -116,6 +120,8 @@ function renderData(data) {
     })
     .join('');
   songsContainer.innerHTML = html;
+  songsContainer.classList.add('box')
+  songsContainer.classList.add('has-background-grey')
 }
 
 function toggleModal() {
